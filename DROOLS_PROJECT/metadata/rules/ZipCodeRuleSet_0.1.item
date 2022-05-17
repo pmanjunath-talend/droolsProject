@@ -1,0 +1,68 @@
+$package$
+$import$
+import java.util.ArrayList
+import java.util.HashMap
+import java.lang.Integer 
+global ArrayList list
+global HashMap globalMap
+
+
+rule "Paris"
+	
+	when
+		input : $inputStruct$(zipCode matches "75\\d{3}")
+	then 
+		Integer count = (Integer)globalMap.get("Paris_count");
+		if(count==null){
+			count=1;
+		}else{
+        ++count;
+		}
+        globalMap.put("Paris_count",count);
+		$outputStruct0$ output=new $outputStruct0$();
+		$writeAllColumnsTo:outputStruct0$
+		output.CityName = "Paris";
+		list.add(output);
+		retract(input);
+		
+end
+
+rule "Suresnes"
+	
+	when
+		input : $inputStruct$(zipCode matches "92150")
+	then 
+		Integer count = (Integer)globalMap.get("Suresnes_count");
+		if(count==null){
+			count=1;
+		}else{
+        ++count;
+		}
+        globalMap.put("Suresnes_count",count);
+		$outputStruct2$ output=new $outputStruct2$();
+		$writeAllColumnsTo:outputStruct2$
+		output.CityName = "Suresnes";
+		list.add(output);
+		retract(input);
+		
+end
+rule "Paris1a"
+	
+	when
+		input : $inputStruct$(zipCode matches "75\\d{4}")
+	then 
+		Integer count = (Integer)globalMap.get("Paris1a_count");
+		if(count==null){
+			count=1;
+		}else{
+        ++count;
+		}
+        globalMap.put("Paris1a_count",count);
+		$outputStruct1$ output=new $outputStruct1$();
+		$writeAllColumnsTo:outputStruct1$
+		output.CityName = "Paris_11";
+		list.add(output);
+		retract(input);
+		
+end
+

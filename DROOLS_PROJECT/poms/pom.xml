@@ -11,7 +11,9 @@
   <modules>
     <module>code/beans</module>
     <module>code/routines</module>
+    <module>jobs/process/Drools/tbrms_loan_standalone_64_0.1</module>
     <module>jobs/process/brmscheck_0.1</module>
+    <module>jobs/process/rulejob_0.1</module>
   </modules>
   <properties>
     <talend.project.name>DROOLS_PROJECT</talend.project.name>
